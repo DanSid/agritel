@@ -38,7 +38,7 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="assets/img/logo.png"   alt="Agritel">
-        <h1 class="sitename">Agritel</h1> 
+        <!-- <h1 class="sitename">Agritel</h1>  -->
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -46,7 +46,7 @@
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="services.html">Our Services</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="statisticalprojections.html">Statistical Projections</a></li>
           <!-- <li><a href="blog.html">Blog</a></li> -->
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -61,59 +61,60 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-
-        <div class="carousel-item active">
-          <img src="assets/img/hero_1.jpg" alt="">
-          <div class="carousel-container">
-            <h2>Farming is the best solution of worlds starvation</h2>
-            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+      <section id="hero" class="hero section dark-background">
+        <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+          <div class="carousel-item active" data-statistic="Over 50% of agricultural losses stem from inaccurate forecasts (World Bank, 2017)" data-headline="80% of Ghana’s farmers struggle with unreliable weather forecasts">
+            <img src="assets/img/hero_1.jpg" alt="">
+            <div class="carousel-container">
+              <h2>Farming is the best solution of world's starvation</h2>
+            </div>
           </div>
-        </div><!-- End Carousel Item -->
-
-        <div class="carousel-item">
-          <img src="assets/img/hero_2.jpg" alt="">
-          <div class="carousel-container">
-            <h2>Organic vegetables is good for health</h2>
-            <!-- <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p> -->
+      
+          <div class="carousel-item" data-statistic="Smallholder farmers are highly vulnerable to climate impacts (FAO, 2020)" data-headline="Farmers face unpredictable weather and climate change">
+            <img src="assets/img/hero_2.jpg" alt="">
+            <div class="carousel-container">
+              <h2>Organic vegetables are good for health</h2>
+            </div>
           </div>
-        </div><!-- End Carousel Item -->
-
-        <div class="carousel-item">
-          <img src="assets/img/hero_3.jpg" alt="">
-          <div class="carousel-container">
-            <h2>Providing Mechanized Tools to make farmers life easy</h2>
-            <!-- <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p> -->
+      
+          <div class="carousel-item" data-statistic="Local forecasts improve crop yields by up to 25% (World Bank, 2021)" data-headline="Get weather forecasts tailored to your farm’s location">
+            <img src="assets/img/hero_3.jpg" alt="">
+            <div class="carousel-container">
+              <h2>Providing Mechanized Tools to make farmers' life easy</h2>
+            </div>
           </div>
-        </div><!-- End Carousel Item -->
-
-        <div class="carousel-item">
-          <img src="assets/img/hero_4.jpg" alt="">
-          <div class="carousel-container">
-            <h2>Farming as a Passion</h2>
-            <!-- <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius.</p> -->
+      
+          <div class="carousel-item" data-statistic="Weather-specific insights lead to improved productivity and reduced crop loss (IFAD, 2018)" data-headline="Make better decisions with precise weather data">
+            <img src="assets/img/hero_4.jpg" alt="">
+            <div class="carousel-container">
+              <h2>Farming as a Passion</h2>
+            </div>
           </div>
-        </div><!-- End Carousel Item -->
-
-        <div class="carousel-item">
-          <img src="assets/img/hero_5.jpg" alt="">
-          <div class="carousel-container">
-            <h2>Good Food For All</h2>
-            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+      
+          <div class="carousel-item" data-statistic="Smallholder farmers contribute 80% of agriculture’s workforce in Ghana (World Bank, 2021)" data-headline="Agriculture is the backbone of Ghana’s economy">
+            <img src="assets/img/hero_5.jpg" alt="">
+            <div class="carousel-container">
+              <h2>Good Food For All</h2>
+            </div>
           </div>
-        </div><!-- End Carousel Item -->
-
-        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
-
-        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
-
-        <ol class="carousel-indicators"></ol>
-
-      </div>
+      
+          <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+          </a>
+      
+          <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+          </a>
+      
+          <ol class="carousel-indicators"></ol>
+        </div>
+        <div id="statistic-container">
+          <h3 id="headline"></h3>
+          <p id="statistic"></p>
+        </div>
+        
+      </section>
+      
 
     </section><!-- /Hero Section -->
 
@@ -317,24 +318,44 @@
                 <div class="col-lg-12 d-flex align-items-start mb-4">
                   <i class="bi bi-cloud-rain me-4 display-6"></i>
                   <div>
-                    <h4 class="m-0 h5 text-white">Weather forecasts</h4>
-                    <!-- <p class="text-white opacity-50">Lorem ipsum dolor sit amet.</p> -->
+                    <h4 class="m-0 h5 text-white">Weather Forecasting </h4>
+                    <p class="text-white opacity-50">Providing accurate weather forecasts sent directly to farmers via SMS.</p>
                   </div>
                 </div>
                 <div class="col-lg-12 d-flex align-items-start mb-4">
+                  <i class="bi bi-robot me-4 display-6"></i>
+                  <div>
+                    <h3 class="m-0 h5 text-white">In the future we plan to leverage:</h3>
+                   <br> <h4 class="m-0 h5 text-white">IoT Monitoring </h4>
+                    <!-- <p class="text-white opacity-50">In a less bright colour to represent dormant nature and hence future integration.</p> -->
+                  </div>
+                </div>
+                <div class="col-lg-12 d-flex align-items-start mb-4">
+                  <i class="bi bi-robot me-4 display-6"></i>
+                  <div>
+                    <h4 class="m-0 h5 text-white">AI and Machine Learning  </h4>
+                    <!-- <p class="text-white opacity-50">In a less bright colour to represent dormant nature and hence future integration.</p> -->
+                  </div>
+                </div>
+                <div class="col-lg-12 d-flex align-items-start mb-4">
+                  <i class="bi bi-thermometer-sun me-4 display-6"></i>
+                  <div>
+                    <h4 class="m-0 h5 text-white">Meteorological Services</h4>
+                    <!-- <p class="text-white opacity-50">Lorem ipsum dolor sit amet.</p> -->
+                  </div>
+                </div>
+                <!-- <div class="col-lg-12 d-flex align-items-start mb-4">
                   <i class="bi bi-heart me-4 display-6"></i>
                   <div>
                     <h4 class="m-0 h5 text-white">Pest outbreak forecasting</h4>
-                    <!-- <p class="text-white opacity-50">Lorem ipsum dolor sit amet.</p> -->
                   </div>
                 </div>
                 <div class="col-lg-12 d-flex align-items-start">
                   <i class="bi bi-shop me-4 display-6"></i>
                   <div>
                     <h4 class="m-0 h5 text-white">Insights on time for fertilizer and pesticide application</h4>
-                    <!-- <p class="text-white opacity-50">Lorem ipsum dolor sit amet.</p> -->
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -503,14 +524,48 @@
       </div>
     </section><!-- /Services 2 Section -->
 
-    <!-- Testimonials Section -->
+    <!-- Statistical Projections Section -->
     <section class="testimonials-12 testimonials section" id="testimonials">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>TESTIMONIALS</h2>
+        <h2>STATISTICAL PROJECTIONS</h2>
        </div><!-- End Section Title -->
-
-      <div class="testimonial-wrap">
+       <section id="services" class="services section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>WHY WE EXIST:</h2>
+          <p>To solve the challenges of small holder farmers, and gain the feedback from farmers during visits</p>
+        </div>
+      </section>
+  
+       <section id="services" class="services section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>OUR IMPACT SO FAR:</h2>
+          <p>Connections with Apremdo community.</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3342.743419112359!2d-1.8008889902449516!3d4.903774325777358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfe77833d89199b7%3A0x5eb2793437a5ddb9!2sApremdo%2C%20Takoradi!5e0!3m2!1sen!2sgh!4v1734021641345!5m2!1sen!2sgh" style="width: 100%; height: 200px;"   frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </section>
+  
+       <section id="services" class="services section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>THE JOURNEY AHEAD:</h2>
+          <p>Vision and steps to expand impact.</p>
+        </div>
+      </section>
+  
+       <section id="services" class="services section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>PARTNER WITH US:</h2>
+          <p>We call for investments, partnerships or collaboration with organizations that support agricultural innovation, Behind the scenes. Pics and videos, Future impact projections.</p>
+        </div>
+      </section>
+  
+       <section id="services" class="services section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>PARTNER SPOTLIGHT:</h2>
+          <p>Innovators up aend YAI, Agricultural facts in Ghana.</p>
+        </div>
+      </section>
+      <!-- <div class="testimonial-wrap">
         <div class="container">
           <div class="row">
             <div class="col-md-6 mb-4 mb-md-4">
@@ -562,9 +617,11 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
 
+
+   
 
     <!-- Call To Action Section -->
     <section id="call-to-action" class="call-to-action section light-background">
@@ -609,11 +666,13 @@
               <span class="sitename">Agritel</span>
             </a>
             <div class="footer-contact pt-3">
-              <p>Kumasi</p>
+              <p>Takoradi</p>
               <!-- <p>.......</p> -->
               <p class="mt-3"><strong>Phone:</strong> <span>+233551896142</span></p>
 
-              <p><strong>Email:</strong> <span>veraannan1@gmail.cpm</span></p>
+              <p><strong>Email:</strong> <span>agritelghana@gmail.com</span></p>
+              <p><strong>Facebook:</strong> <span>@agritel farming solutions</span></p>
+              <p><strong>Instagram:</strong> <span>@agritelfarmingsolutions</span></p>
                </div>
           </div>
           <div class="col-lg-2 col-md-3 footer-links">
@@ -622,7 +681,7 @@
               <li><a href="#">Home</a></li>
               <li><a href="about.html">About us</a></li>
               <li><a href="services.html">Services</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="statisticalprojections.html">Statistical Projections</a></li>
               <li><a href="contact.html">Contact Us</a></li>
             </ul>
           </div>

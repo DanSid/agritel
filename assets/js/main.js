@@ -63,6 +63,44 @@
 
   });
 
+
+//  Popup feature
+document.addEventListener("DOMContentLoaded", function() {
+  const carouselItems = document.querySelectorAll(".carousel-item");
+  const statisticContainer = document.getElementById("statistic-container");
+  const headlineElement = document.getElementById("headline");
+  const statisticElement = document.getElementById("statistic");
+
+  carouselItems.forEach(item => {
+    item.addEventListener("click", function() {
+      const headline = item.getAttribute("data-headline");
+      const statistic = item.getAttribute("data-statistic");
+
+      // Update content
+      headlineElement.textContent = headline;
+      statisticElement.textContent = statistic;
+
+      // Display the statistic container
+      statisticContainer.style.display = "block";
+
+      // Position the container dynamically over the clicked item
+      const rect = item.getBoundingClientRect();
+      statisticContainer.style.top = `${rect.top + window.scrollY + rect.height / 2}px`;
+      statisticContainer.style.left = `${rect.left + rect.width / 2}px`;
+      statisticContainer.style.transform = "translate(-50%, -50%)";
+    });
+  });
+
+  // Hide the statistic box when clicking outside of it
+  document.addEventListener("click", function(event) {
+    if (!statisticContainer.contains(event.target) && !event.target.closest(".carousel-item")) {
+      statisticContainer.style.display = "none";
+    }
+  });
+});
+
+
+
   /**
    * Toggle mobile nav dropdowns
    */

@@ -129,6 +129,42 @@ h6 {
   }
 }
 
+/* Popup */
+#statistic-container {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 10; /* Ensure it's above other elements */
+  display: none; /* Initially hidden */
+}
+
+#statistic-container h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#statistic-container p {
+  font-size: 14px;
+}
+
+.carousel-item {
+  position: relative; /* Ensure carousel item is a positioned parent */
+}
+
+.carousel-container:hover + #statistic-container {
+  display: block; /* Show statistic container on hover */
+}
+
+
+
 /* Pulsating Play Button
 ------------------------------*/
 .pulsating-play-btn {
