@@ -27,6 +27,15 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+ <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+  <script type="text/javascript">
+    (function() {
+        emailjs.init('DzUgEXFj_Qu6AMdEp'); // Your EmailJS user ID
+    })();
+</script>
+
 
 </head>
 
@@ -37,7 +46,7 @@
 
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" alt="AgriCulture">
+        <img src="assets/img/logo.png" alt="AGRITEL FARMING SOLUTIONS">
         <!-- <h1 class="sitename">AgriCulture</h1>  -->
       </a>
 
@@ -137,8 +146,9 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
+            <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form"> -->
+              <form id="contact-form" class="php-email-form" >
+                <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
                 </div>
@@ -150,7 +160,7 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" placeholder="Message" required=""></textarea>
+                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Message" required=""></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
@@ -159,7 +169,7 @@
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
-          </div><!-- End Contact Form -->
+          </div>
 
         </div>
 
@@ -168,7 +178,7 @@
     </section><!-- /Contact Section -->
 
     <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section light-background">
+     <section id="call-to-action" class="call-to-action section light-background">
 
       <div class="content">
         <div class="container">
@@ -195,7 +205,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> 
     
     
   
@@ -208,14 +218,16 @@
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6 footer-about">
             <a href="index.html" class="logo d-flex align-items-center">
-              <span class="sitename">Agritel</span>
+              <span class="sitename">AGRITEL FARMING SOLUTIONS</span>
             </a>
             <div class="footer-contact pt-3">
-              <p>Kumasi</p>
-              <p>............</p>
-              <p class="mt-3"><strong>Phone:</strong> <span>+233540352377</span></p>
+              <p>Takoradi</p>
+              <!-- <p>.......</p> -->
+              <p class="mt-3"><strong>Phone:</strong> <span>+233551896142</span></p>
 
-              <p><strong>Email:</strong> <span>....@gmail.com</span></p>
+              <p><strong>Email:</strong> <span>agritelghana@gmail.com</span></p>
+              <p><strong>Facebook:</strong> <span>@agritel farming solutions</span></p>
+              <p><strong>Instagram:</strong> <span>@agritelfarmingsolutions</span></p>
                </div>
           </div>
 
@@ -251,7 +263,7 @@
 
         <div class="d-flex flex-column align-items-center align-items-lg-start">
           <div>
-            © Copyright 2024 <strong><span>Agritel</span></strong>. All Rights Reserved
+            © Copyright 2024 <strong><span>AGRITEL FARMING SOLUTIONS</span></strong>. All Rights Reserved
           </div>
           
         </div>
@@ -284,6 +296,38 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script type="text/javascript">
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Retrieve form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
+        // Set parameters to send
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message
+        };
+
+        // Send email via EmailJS
+        emailjs.send('service_gl0ii0s', 'template_shg6sze', templateParams)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                document.querySelector('.sent-message').style.display = 'block';
+                document.querySelector('.error-message').style.display = 'none';
+            }, function(error) {
+                console.log('FAILED...', error);
+                document.querySelector('.error-message').textContent = 'Oops! Something went wrong.';
+                document.querySelector('.error-message').style.display = 'block';
+            });
+    });
+</script>
 
 </body>
 

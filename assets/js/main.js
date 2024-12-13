@@ -170,6 +170,52 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    const swiperElements = document.querySelectorAll('.init-swiper');
+    swiperElements.forEach(element => {
+      const config = JSON.parse(element.querySelector('.swiper-config').textContent);
+      new Swiper(element, config);
+    });
+  });
+  
+
+
+// Contact form
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const formData = new FormData(form);
+
+  document.getElementById("loading").style.display = "block";
+  document.getElementById("error-message").style.display = "none";
+  document.getElementById("sent-message").style.display = "none";
+
+  fetch("forms/contact.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("loading").style.display = "none";
+      if (data.status === "success") {
+        document.getElementById("sent-message").style.display = "block";
+        form.reset();
+      } else {
+        document.getElementById("error-message").style.display = "block";
+        document.getElementById("error-message").textContent = data.message;
+      }
+    })
+    .catch(error => {
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("error-message").style.display = "block";
+      document.getElementById("error-message").textContent = "An error occurred. Please try again.";
+    });
+});
+
+
+
+
   /**
    * Init swiper sliders
    */
